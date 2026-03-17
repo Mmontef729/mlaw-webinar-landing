@@ -307,95 +307,49 @@
       font-weight: 400;
     }
 
-    /* ── LAWMATICS FORM STYLING ──
-       Force white text on dark navy, 2-column field layout to match original.
-    */
-
-    /* Force ALL backgrounds inside form-box to transparent so dark navy shows through */
-    .form-box * {
-      background: transparent !important;
-      color: #fff !important;
-      box-shadow: none !important;
+    /* ── CUSTOM FORM STYLES ── */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 18px;
     }
-
-    /* Inputs: underline only */
-    .form-box input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
-    .form-box textarea,
-    .form-box select {
-      border: none !important;
-      border-bottom: 1px solid rgba(255,255,255,0.5) !important;
-      border-radius: 0 !important;
-      padding: 8px 0 !important;
-      width: 100% !important;
-      font-size: 1rem !important;
-      font-family: 'Lato', sans-serif !important;
-      outline: none !important;
+    .form-field input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 10px 0;
+      width: 100%;
+      font-size: 1rem;
+      font-family: 'Lato', sans-serif;
+      outline: none;
     }
-    .form-box input::placeholder,
-    .form-box textarea::placeholder { color: rgba(255,255,255,0.55) !important; }
-    .form-box input:focus,
-    .form-box textarea:focus {
-      border-bottom-color: #fff !important;
+    .form-field input::placeholder { color: rgba(255,255,255,0.6); }
+    .form-field input:focus { border-bottom-color: #fff; }
+    .form-consent {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      margin: 18px 0 14px;
     }
-
-    /* Submit button — underlined, right-aligned */
-    .form-box input[type="submit"],
-    .form-box button[type="submit"] {
-      border: none !important;
-      font-size: 1rem !important;
-      font-weight: 700 !important;
-      text-decoration: underline !important;
-      cursor: pointer !important;
-      padding: 10px 0 !important;
-      display: block;
-      margin-left: auto;
-      letter-spacing: 0.5px;
-      font-family: 'Lato', sans-serif !important;
+    .form-consent a { color: rgba(255,255,255,0.75); text-decoration: underline; }
+    .form-submit-wrap { text-align: right; }
+    #submit-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 8px 0;
+      font-family: 'Lato', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
-
-    /* Labels */
-    .form-box label {
-      font-size: 0.88rem !important;
-      font-weight: 400 !important;
-      opacity: 0.8;
-      margin-bottom: 2px;
-      display: block;
-    }
-
-    /* Consent / small print */
-    .form-box p,
-    .form-box small {
-      font-size: 0.78rem !important;
-      line-height: 1.5 !important;
-      opacity: 0.7;
-    }
-
-    /* Select option text needs dark color so it's readable in the dropdown */
-    .form-box select option {
-      background: #013962 !important;
-      color: #fff !important;
-    }
-
-    /* 2-column field grid — pairs First/Last and Phone/Email side by side */
-    .form-box form,
-    .form-box [class*="form"],
-    .form-box [id*="form"] {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 0 20px !important;
-    }
-    /* Items that should span both columns */
-    .form-box form > p,
-    .form-box form > small,
-    .form-box form > div:last-child,
-    .form-box [class*="form"] > p,
-    .form-box [class*="form"] > small,
-    .form-box [class*="consent"],
-    .form-box [class*="submit-wrap"],
-    .form-box input[type="submit"],
-    .form-box button[type="submit"] {
-      grid-column: 1 / -1 !important;
-    }
+    #submit-btn:hover { opacity: 0.8; }
+    #submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
   </style>
 </head>
@@ -455,11 +409,37 @@
         </ul>
       </div>
 
-      <!-- Right: Lawmatics registration form -->
+      <!-- Right: Registration form -->
       <div class="hero-right">
         <div class="form-box">
           <h2>Register now for free</h2>
-          <script id="lm-embedded-script">!function(e,t,n,a,s,c,i){if(!e[s]){i=e[s]=function(){i.process?i.process.apply(i,arguments):i.queue.push(arguments)},i.queue=[],i.t=1*new Date;var o=t.createElement(n);o.async=1,o.src=a+"?t="+Math.ceil(new Date/c)*c;var r=t.getElementsByTagName(n)[0];r.parentNode.insertBefore(o,r)}}(window,document,"script","https://navi.lawmatics.com/intake.min.js","lm_intake",864e5),lm_intake("d4db9b44-6630-4227-92ed-a1346cca001d", "lm-embedded-script", {});</script>
+          <form id="webinar-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" name="first_name" placeholder="First Name" required />
+              </div>
+              <div class="form-field">
+                <input type="text" name="last_name" placeholder="Last Name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="tel" name="phone" placeholder="Phone" required />
+              </div>
+              <div class="form-field">
+                <input type="email" name="email" placeholder="Email" required />
+              </div>
+            </div>
+            <p class="form-consent">By providing your phone number, you consent to receive automated informational/conversational SMS communications from Lawmatics on behalf of Monteforte Law. Consent is not a condition of service. Message &amp; data rates may apply and frequency will vary. Reply STOP to unsubscribe. Text HELP for help. <a href="https://www.montefortelaw.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> &bull; <a href="https://www.lawmatics.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a></p>
+            <p id="form-error" style="display:none; color:#ffaaaa; font-size:0.85rem; margin-bottom:8px;"></p>
+            <div class="form-submit-wrap">
+              <button type="submit" id="submit-btn">Submit</button>
+            </div>
+          </form>
+          <div id="form-success" style="display:none; text-align:center; padding:30px 0;">
+            <p style="font-size:1.25rem; font-weight:700; color:#fff;">Thank you for registering!</p>
+            <p style="color:rgba(255,255,255,0.75); margin-top:8px;">We'll send you the webinar details shortly.</p>
+          </div>
         </div>
       </div>
 
@@ -630,6 +610,37 @@
     }
 
     init();
+
+    // ── Form submission ──
+    document.getElementById('webinar-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn    = document.getElementById('submit-btn');
+      const errEl  = document.getElementById('form-error');
+      btn.textContent = 'Submitting…';
+      btn.disabled    = true;
+      errEl.style.display = 'none';
+
+      const data = Object.fromEntries(new FormData(this).entries());
+
+      try {
+        const res = await fetch('/.netlify/functions/submit-form', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('webinar-form').style.display  = 'none';
+          document.getElementById('form-success').style.display  = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (_) {
+        errEl.textContent   = 'Something went wrong. Please try again or call us at 978-657-7437.';
+        errEl.style.display = 'block';
+        btn.textContent  = 'Submit';
+        btn.disabled     = false;
+      }
+    });
   </script>
 
 </body>
