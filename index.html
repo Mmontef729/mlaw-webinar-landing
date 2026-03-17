@@ -7,462 +7,492 @@
   <meta name="description" content="Join attorney Michael Monteforte Jr. for a free virtual webinar: Wills vs Trusts – Which One is Right for Me? Register now." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Lato', sans-serif;
-      color: #333;
+      color: #013962;
+      background: #fff;
       line-height: 1.6;
     }
 
-    a { color: #00518a; text-decoration: none; }
+    a { color: #2e7bb5; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* ── HEADER ── */
     header {
       background: #fff;
-      border-bottom: 3px solid #00518a;
-      padding: 15px 0;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .logo { height: 55px; width: auto; }
-    .phone-link {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #00518a;
-    }
-
-    /* ── ANNOUNCEMENT BAR ── */
-    .announcement-bar {
-      background: #00518a;
-      color: #fff;
+      padding: 18px 0;
+      border-bottom: 1px solid #e0e8f0;
       text-align: center;
-      padding: 14px 20px;
     }
-    .announcement-bar p {
-      font-size: 1.1rem;
-      letter-spacing: 0.3px;
-    }
+    .logo { height: 70px; width: auto; }
 
-    /* ── COUNTDOWN ── */
-    .countdown-section {
-      background: #0a3a5a;
-      padding: 25px 0;
+    /* ── ANNOUNCEMENT + COUNTDOWN ── */
+    .announcement {
+      background: linear-gradient(180deg, #013962 0%, #001e33 100%);
+      padding: 22px 20px;
+      text-align: center;
     }
-    .countdown-timer {
+    .announcement-text {
+      color: #fff;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+    }
+    .countdown-row {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
     }
-    .countdown-unit { text-align: center; }
-    .countdown-unit span {
+    .c-box {
+      background: #fff;
+      border-radius: 6px;
+      padding: 10px 18px;
+      text-align: center;
+      min-width: 78px;
+    }
+    .c-box .num {
       display: block;
-      font-size: 2.6rem;
-      font-weight: 900;
-      color: #fff;
-      min-width: 75px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 6px 12px;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #013962;
       line-height: 1;
     }
-    .countdown-unit label {
-      font-size: 0.72rem;
-      color: #aad4ee;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-top: 6px;
+    .c-box .lbl {
       display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: #555;
+      letter-spacing: 1px;
+      margin-top: 4px;
     }
-    .countdown-sep {
-      font-size: 2.2rem;
+    .c-sep {
       color: #fff;
+      font-size: 1.6rem;
       font-weight: 700;
-      padding-bottom: 22px;
-      user-select: none;
+      padding-bottom: 20px;
     }
     .webinar-live {
       color: #fff;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      text-align: center;
-      padding: 12px;
+      padding: 10px 0;
     }
 
     /* ── HERO ── */
-    .hero-section {
-      background: #f4f8fc;
-      padding: 60px 0;
+    .hero {
+      padding: 48px 0 50px;
+      background: #fff;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 50px;
+      grid-template-columns: 1fr 460px;
+      gap: 40px;
       align-items: start;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 940px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-right { order: -1; }
     }
-    .badge {
-      display: inline-block;
-      background: #d4941a;
-      color: #fff;
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 5px 16px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
-    }
-    .hero-left h1 {
-      font-size: 2.1rem;
+
+    /* Left column */
+    .hero-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
       font-weight: 900;
-      color: #00518a;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-    .hero-left h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 22px;
+      color: #013962;
+      margin-bottom: 14px;
+      line-height: 1.3;
     }
     .hero-sub {
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 22px;
-      font-weight: 600;
-    }
-    .benefits-list {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-    .benefits-list li {
-      font-size: 1rem;
-      padding: 9px 0;
-      color: #333;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #dce8f2;
-    }
-    .benefits-list li::before {
-      content: '✓';
-      color: #d4941a;
-      font-weight: 900;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    /* Form Box */
-    .form-box {
-      background: #fff;
-      border: 2px solid #00518a;
-      border-radius: 10px;
-      padding: 30px 25px;
-      box-shadow: 0 6px 25px rgba(0,81,138,0.12);
-    }
-    .form-box h3 {
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #00518a;
-      text-align: center;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #e8f0f8;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: inline-block;
-      background: #d4941a;
-      color: #fff;
       font-size: 1rem;
       font-weight: 700;
-      padding: 16px 38px;
-      border-radius: 5px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: background 0.2s, transform 0.1s;
-      text-decoration: none;
+      color: #013962;
+      margin-bottom: 6px;
+      line-height: 1.55;
     }
-    .cta-btn:hover {
-      background: #b8781a;
-      text-decoration: none;
-      color: #fff;
-      transform: translateY(-1px);
+    .hero-tag {
+      font-size: 0.95rem;
+      color: #013962;
+      margin-bottom: 22px;
     }
-
-    /* ── TOPICS ── */
-    .topics-section {
-      padding: 70px 0;
-      background: #fff;
-    }
-    .section-title {
-      font-size: 1.85rem;
-      font-weight: 900;
-      color: #00518a;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-    @media (max-width: 700px) {
-      .topics-grid { grid-template-columns: 1fr; }
-    }
-    .topic-card {
-      background: #f0f6fc;
-      border-left: 4px solid #00518a;
-      border-radius: 6px;
-      padding: 25px;
+    .hero-list { list-style: none; }
+    .hero-list li {
       display: flex;
-      gap: 18px;
+      gap: 12px;
+      padding: 11px 0;
       align-items: flex-start;
-    }
-    .topic-num {
-      font-size: 1.9rem;
-      font-weight: 900;
-      color: #00518a;
-      opacity: 0.25;
-      min-width: 38px;
-      line-height: 1;
-    }
-    .topic-card p {
+      border-bottom: 1px solid #e4eef8;
       font-size: 0.97rem;
-      color: #333;
-      line-height: 1.65;
+      color: #013962;
     }
-
-    /* ── QUALIFICATION ── */
-    .qualification-section {
-      background: #0a3a5a;
-      padding: 70px 0;
-      text-align: center;
-    }
-    .qualification-section .section-title { color: #fff; }
-    .section-sub {
-      color: #aad4ee;
+    .hero-list li:last-child { border-bottom: none; }
+    .ck {
+      color: #2e7bb5;
       font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    .qualification-list {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      text-align: left;
-    }
-    .qualification-list li {
-      color: #fff;
-      font-size: 1rem;
-      padding: 14px 0 14px 38px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-      line-height: 1.5;
-    }
-    .qualification-list li::before {
-      content: '✓';
-      color: #d4941a;
       font-weight: 900;
-      font-size: 1.1rem;
-      position: absolute;
-      left: 0;
-      top: 14px;
-    }
-    .qualification-cta {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
-    /* ── SPEAKER ── */
-    .speaker-section {
-      padding: 70px 0;
-      background: #f4f8fc;
+    /* Right column — form box */
+    .form-box {
+      background: linear-gradient(180deg, #013962 0%, #001e33 100%);
+      border-radius: 10px;
+      padding: 28px 24px 32px;
+      color: #fff;
     }
-    .speaker-grid {
+    .form-box h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+
+    /* ── CONTENT CARDS (light blue, rounded) ── */
+    .cards-wrap { padding: 10px 0 30px; }
+    .content-card {
+      background: #dce8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .card-inner {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 50px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      min-height: 380px;
     }
     @media (max-width: 750px) {
-      .speaker-grid { grid-template-columns: 1fr; text-align: center; }
-      .speaker-photo { max-width: 260px; margin: 0 auto; }
-      .speaker-credentials li { text-align: left; }
+      .card-inner { grid-template-columns: 1fr; }
+      .card-img-wrap { min-height: 260px; }
     }
-    .speaker-photo img {
+    .card-img-wrap {
+      overflow: hidden;
+    }
+    .card-img-wrap img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .speaker-eyebrow {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #d4941a;
+    .card-body {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card-label {
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      color: #013962;
+      margin-bottom: 18px;
     }
-    .speaker-bio h3 {
-      font-size: 1.75rem;
-      font-weight: 900;
-      color: #00518a;
-      margin-bottom: 16px;
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex;
+      gap: 12px;
+      padding: 9px 0;
+      align-items: flex-start;
+      font-size: 0.97rem;
+      color: #013962;
+      border-bottom: 1px solid rgba(1,57,98,0.1);
     }
-    .speaker-bio p {
+    .checklist li:last-child { border-bottom: none; }
+
+    /* ── QUALIFICATION SECTION ── */
+    .qual-section {
+      padding: 50px 0 55px;
+      background: #fff;
+    }
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+    @media (max-width: 750px) {
+      .qual-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+    .qual-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #013962;
+      margin-bottom: 18px;
+    }
+    .qual-list { list-style: none; margin-bottom: 28px; }
+    .qual-list li {
+      display: flex;
+      gap: 12px;
+      padding: 11px 0;
+      align-items: flex-start;
+      font-size: 0.97rem;
+      color: #013962;
+      border-bottom: 1px solid #e4eef8;
+    }
+    .qual-list li:last-child { border-bottom: none; }
+
+    /* Image with badge overlay */
+    .img-badge-wrap { position: relative; }
+    .img-badge-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+    .img-badge {
+      position: absolute;
+      top: 16px;
+      right: -8px;
+      background: #013962;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 18px 20px;
+      border-radius: 12px;
+      text-align: center;
+      line-height: 1.35;
+      max-width: 155px;
+    }
+
+    /* CTA button */
+    .btn {
+      display: inline-block;
+      background: #013962;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #002849; color: #fff; text-decoration: none; }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial {
+      background: #fff;
+      border-top: 1px solid #dce8f0;
+      border-bottom: 1px solid #dce8f0;
+      padding: 55px 20px;
+      text-align: center;
+    }
+    .testimonial blockquote {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 700;
+      color: #013962;
+      line-height: 1.65;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 14px;
       font-size: 1rem;
       color: #555;
-      margin-bottom: 16px;
+      font-style: normal;
+      font-weight: 400;
     }
-    .speaker-credentials {
-      list-style: none;
-      margin-bottom: 28px;
+
+    /* ── LAWMATICS FORM STYLING ──
+       Overrides so the embedded form matches the dark navy design in the screenshot:
+       underline-only fields, white text, two-column field grid, styled submit.
+    */
+    .form-box h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 22px;
+      line-height: 1.2;
     }
-    .speaker-credentials li {
-      padding: 9px 0 9px 28px;
-      color: #333;
-      position: relative;
-      font-size: 0.97rem;
-      border-bottom: 1px solid #dce8f2;
+
+    /* Target Lawmatics form wrapper */
+    .form-box form,
+    .form-box [class*="lm-"],
+    .form-box [id*="lm-"] {
+      color: #fff;
     }
-    .speaker-credentials li::before {
-      content: '►';
-      color: #00518a;
-      font-size: 0.65rem;
-      position: absolute;
-      left: 0;
-      top: 13px;
+
+    /* Field labels */
+    .form-box label,
+    .form-box [class*="label"] {
+      color: rgba(255,255,255,0.75) !important;
+      font-size: 0.85rem !important;
+      font-weight: 400 !important;
+      display: block;
+      margin-bottom: 2px;
     }
+
+    /* All text/email/tel/phone inputs */
+    .form-box input[type="text"],
+    .form-box input[type="email"],
+    .form-box input[type="tel"],
+    .form-box input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+      border-radius: 0 !important;
+      color: #fff !important;
+      padding: 8px 0 !important;
+      width: 100% !important;
+      font-size: 0.95rem !important;
+      font-family: 'Lato', sans-serif !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .form-box input::placeholder { color: rgba(255,255,255,0.5) !important; }
+    .form-box input:focus {
+      border-bottom-color: rgba(255,255,255,0.9) !important;
+    }
+
+    /* Submit button */
+    .form-box input[type="submit"],
+    .form-box button[type="submit"],
+    .form-box [class*="submit"] {
+      background: transparent !important;
+      border: none !important;
+      color: #fff !important;
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      text-decoration: underline !important;
+      cursor: pointer !important;
+      padding: 8px 0 !important;
+      float: right;
+      font-family: 'Lato', sans-serif !important;
+      letter-spacing: 0.5px;
+    }
+
+    /* Consent / legal text */
+    .form-box p,
+    .form-box small,
+    .form-box [class*="consent"],
+    .form-box [class*="legal"],
+    .form-box [class*="terms"] {
+      color: rgba(255,255,255,0.6) !important;
+      font-size: 0.78rem !important;
+      line-height: 1.5;
+    }
+    .form-box a { color: rgba(255,255,255,0.75) !important; }
+
+    /* Field row spacing */
+    .form-box [class*="field"],
+    .form-box [class*="group"],
+    .form-box [class*="row"] {
+      margin-bottom: 16px !important;
+    }
+
+    /* Select dropdowns */
+    .form-box select {
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+      color: #fff !important;
+      padding: 8px 0 !important;
+      width: 100% !important;
+      font-size: 0.95rem !important;
+      outline: none !important;
+    }
+    .form-box select option { color: #013962 !important; background: #fff !important; }
 
     /* ── FOOTER ── */
     footer {
-      background: #00518a;
-      color: #fff;
+      background: #013962;
       padding: 40px 0 20px;
     }
     .footer-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       text-align: center;
     }
-    .footer-logo {
-      height: 50px;
-      filter: brightness(0) invert(1);
-    }
-    .footer-info p {
-      color: #aad4ee;
-      font-size: 0.9rem;
-      margin: 4px 0;
-    }
+    .footer-logo { height: 52px; filter: brightness(0) invert(1); }
+    .footer-info p { color: #a8ccde; font-size: 0.88rem; margin: 3px 0; }
     .footer-info a { color: #fff; font-weight: 700; }
     .footer-copy {
-      color: rgba(255,255,255,0.45);
-      font-size: 0.8rem;
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 20px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 18px;
       width: 100%;
       text-align: center;
     }
-    .footer-copy a { color: rgba(255,255,255,0.65); }
+    .footer-copy a { color: rgba(255,255,255,0.6); }
   </style>
 </head>
 <body>
 
   <!-- ── HEADER ── -->
   <header>
-    <div class="container header-inner">
-      <a href="https://www.montefortelaw.com" target="_blank" rel="noopener">
-        <img
-          src="https://www.montefortelaw.com/wp-content/uploads/2025/11/Monteforte-Law-logo.webp"
-          alt="Monteforte Law"
-          class="logo"
-        />
-      </a>
-      <a href="tel:9786577437" class="phone-link">978-657-7437</a>
-    </div>
+    <a href="https://www.montefortelaw.com" target="_blank" rel="noopener">
+      <img
+        src="https://www.montefortelaw.com/wp-content/uploads/2025/11/Monteforte-Law-logo.webp"
+        alt="Monteforte Law, P.C."
+        class="logo"
+      />
+    </a>
   </header>
 
-  <!-- ── ANNOUNCEMENT BAR ── -->
-  <div class="announcement-bar">
+  <!-- ── ANNOUNCEMENT + COUNTDOWN ── -->
+  <div class="announcement">
     <div class="container">
-      <p>Join us for our next webinar on <strong id="webinar-date-text">Tuesday, March 25, 2026 at 6:00 PM ET</strong>!</p>
-    </div>
-  </div>
-
-  <!-- ── COUNTDOWN ── -->
-  <div class="countdown-section">
-    <div class="container">
-      <div class="countdown-timer" id="countdown">
-        <div class="countdown-unit">
-          <span id="days">00</span>
-          <label>Days</label>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span id="hours">00</span>
-          <label>Hours</label>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span id="minutes">00</span>
-          <label>Minutes</label>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span id="seconds">00</span>
-          <label>Seconds</label>
-        </div>
+      <p class="announcement-text">
+        Join us for our next webinar on <strong id="webinar-date-text">Tuesday, March 25, 2026 at 6:00 PM ET</strong>!
+      </p>
+      <div class="countdown-row" id="countdown">
+        <div class="c-box"><span class="num" id="days">00</span><span class="lbl">Days</span></div>
+        <div class="c-sep">:</div>
+        <div class="c-box"><span class="num" id="hours">00</span><span class="lbl">Hours</span></div>
+        <div class="c-sep">:</div>
+        <div class="c-box"><span class="num" id="minutes">00</span><span class="lbl">Minutes</span></div>
+        <div class="c-sep">:</div>
+        <div class="c-box"><span class="num" id="seconds">00</span><span class="lbl">Seconds</span></div>
       </div>
     </div>
   </div>
 
   <!-- ── HERO ── -->
-  <section class="hero-section">
+  <section class="hero">
     <div class="container hero-grid">
 
       <!-- Left: marketing copy -->
       <div class="hero-left">
-        <div class="badge">Free, Virtual Webinar!</div>
-        <h1>The #1 Mistake Families Make With Estate Planning and How To Avoid It</h1>
-        <h2>Wills vs Trusts: Which One is Right for Me?</h2>
-        <p class="hero-sub">Ready to Protect Your Family and Everything You've Worked For?</p>
-        <ul class="benefits-list">
-          <li>Protect Your Family From Court Battles</li>
-          <li>Ensure Your Wishes Are Carried Out</li>
-          <li>Avoid Common Estate Planning Mistakes</li>
+        <h2 class="hero-title">The #1 Mistake Families Make With Estate Planning and How To Avoid It</h2>
+        <p class="hero-sub">Ready to Protect Your Family and Everything You've Worked For? Join Michael Monteforte, Esq. on "Wills vs Trusts: Which One is Right for Me?".</p>
+        <p class="hero-tag">Free, Virtual Webinar!</p>
+        <ul class="hero-list">
+          <li>
+            <span class="ck">✓</span>
+            <span><strong>Protect Your Family From Court Battles:</strong> Learn how to keep your loved ones out of probate court and avoid unnecessary delays and expenses.</span>
+          </li>
+          <li>
+            <span class="ck">✓</span>
+            <span><strong>Ensure Your Wishes Are Carried Out:</strong> How to make sure your plan works exactly as you intend, even if you can't speak for yourself.</span>
+          </li>
+          <li>
+            <span class="ck">✓</span>
+            <span><strong>Avoid Common Estate Planning Mistakes:</strong> Discover the top 3 errors that cost families thousands in legal fees.</span>
+          </li>
         </ul>
-        <a href="#register" class="cta-btn">Register Now for Free</a>
       </div>
 
-      <!-- Right: registration form -->
-      <div class="hero-right" id="register">
+      <!-- Right: Lawmatics registration form -->
+      <div class="hero-right">
         <div class="form-box">
-          <h3>Reserve Your Free Spot</h3>
-          <!-- Lawmatics embedded form -->
+          <h2>Register now for free</h2>
           <script id="lm-embedded-script">!function(e,t,n,a,s,c,i){if(!e[s]){i=e[s]=function(){i.process?i.process.apply(i,arguments):i.queue.push(arguments)},i.queue=[],i.t=1*new Date;var o=t.createElement(n);o.async=1,o.src=a+"?t="+Math.ceil(new Date/c)*c;var r=t.getElementsByTagName(n)[0];r.parentNode.insertBefore(o,r)}}(window,document,"script","https://navi.lawmatics.com/intake.min.js","lm_intake",864e5),lm_intake("d4db9b44-6630-4227-92ed-a1346cca001d", "lm-embedded-script", {});</script>
         </div>
       </div>
@@ -470,72 +500,104 @@
     </div>
   </section>
 
-  <!-- ── WHAT YOU'LL LEARN ── -->
-  <section class="topics-section">
+  <!-- ── CONTENT CARDS ── -->
+  <div class="cards-wrap">
     <div class="container">
-      <h2 class="section-title">What You'll Learn</h2>
-      <div class="topics-grid">
-        <div class="topic-card">
-          <div class="topic-num">01</div>
-          <p>The real difference between a will and a trust, and how they work together</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-num">02</div>
-          <p>The four legal documents that form a complete estate plan, and what each one actually does</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-num">03</div>
-          <p>How to protect your home and hard-earned savings from long-term care costs</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-num">04</div>
-          <p>The most common estate planning mistakes families don't realize they're making — and how to plan for incapacity so someone you trust can step in if needed</p>
+
+      <!-- Card 1: What you'll learn -->
+      <div class="content-card">
+        <div class="card-inner">
+          <div class="card-img-wrap">
+            <img
+              src="https://www.montefortelaw.com/wp-content/uploads/2025/12/reports-img-2.webp"
+              alt="Family together"
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-label">In this webinar, you'll learn about:</p>
+            <ul class="checklist">
+              <li><span class="ck">✓</span><span>The real difference between a will and a trust, and how they work together</span></li>
+              <li><span class="ck">✓</span><span>The four legal documents that form a complete estate plan, and what each one actually does</span></li>
+              <li><span class="ck">✓</span><span>How to protect your home and hard-earned savings from long-term care costs</span></li>
+              <li><span class="ck">✓</span><span>The most common estate planning mistakes families don't realize they're making</span></li>
+              <li><span class="ck">✓</span><span>How to plan for incapacity so someone you trust can step in if needed</span></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ── IS THIS FOR YOU? ── -->
-  <section class="qualification-section">
-    <div class="container">
-      <h2 class="section-title">Is This Webinar For You?</h2>
-      <p class="section-sub">Answer YES to any of these questions:</p>
-      <ul class="qualification-list">
-        <li>Do you want to make things easier for your spouse, children, or family when you're gone?</li>
-        <li>Do you own a home, investments, or other assets you want to protect and pass along?</li>
-        <li>Do you want to decide who gets what – instead of the state making that decision?</li>
-        <li>Do you want your family to avoid the Massachusetts probate court?</li>
-        <li>Would you like to reduce the taxes and court fees your family will have to pay after you pass?</li>
-      </ul>
-      <p class="qualification-cta">If you said YES to even one of those, <strong>this webinar is for you.</strong></p>
-      <a href="#register" class="cta-btn">Register Now for Free</a>
     </div>
-  </section>
+  </div>
 
-  <!-- ── SPEAKER ── -->
-  <section class="speaker-section">
-    <div class="container speaker-grid">
-      <div class="speaker-photo">
-        <img
-          src="https://www.montefortelaw.com/wp-content/uploads/michael-monteforte-jr.jpg"
-          alt="Michael Monteforte Jr., Esq."
-          onerror="this.parentElement.style.display='none'"
-        />
-      </div>
-      <div class="speaker-bio">
-        <p class="speaker-eyebrow">Meet Your Host</p>
-        <h3>Michael Monteforte Jr., Esq.</h3>
-        <p>Michael Monteforte Jr. is the founder of Monteforte Law and a trusted authority in estate planning and asset protection.</p>
-        <ul class="speaker-credentials">
-          <li>Author of three estate planning books</li>
-          <li>Creator of the 4-Step Asset Protection Plan™</li>
-          <li>The only attorney in Massachusetts offering the 20/20 Hindsight Trust™</li>
-          <li>Known for turning complex legal issues into clear, practical solutions</li>
+  <!-- ── QUALIFICATION SECTION ── -->
+  <section class="qual-section">
+    <div class="container qual-grid">
+
+      <!-- Left: questions -->
+      <div>
+        <p class="qual-label">If you say "yes" to at least 3 of these, this seminar is for you:</p>
+        <ul class="qual-list">
+          <li><span class="ck">✓</span><span>Do you want to make things easier for your spouse, children, or family when you're gone?</span></li>
+          <li><span class="ck">✓</span><span>Do you own a home, investments, or other assets you want to protect and pass along?</span></li>
+          <li><span class="ck">✓</span><span>Do you want to decide who gets what – instead of the state making that decision?</span></li>
+          <li><span class="ck">✓</span><span>Do you want your family to avoid the Massachusetts probate court?</span></li>
+          <li><span class="ck">✓</span><span>Would you like to reduce the taxes and court fees your family will have to pay after you pass?</span></li>
         </ul>
-        <a href="#register" class="cta-btn">Register Now for Free</a>
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn">Register Now</a>
       </div>
+
+      <!-- Right: image with badge -->
+      <div class="img-badge-wrap">
+        <img
+          src="https://www.montefortelaw.com/wp-content/uploads/2025/12/reports-img-1.webp"
+          alt="Protect your family"
+        />
+        <div class="img-badge">Protect your<br>family now</div>
+      </div>
+
     </div>
   </section>
+
+  <!-- ── SPEAKER CARD ── -->
+  <div class="cards-wrap" style="padding-top:0;">
+    <div class="container">
+      <div class="content-card">
+        <div class="card-inner">
+          <div class="card-img-wrap">
+            <img
+              src="https://www.montefortelaw.com/wp-content/uploads/2026/01/speaker-img_.webp"
+              alt="Michael Monteforte Jr., Esq."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-label">Speaker Information</p>
+            <p style="margin-bottom:14px; font-size:0.97rem;">
+              <a href="https://www.montefortelaw.com/about-us/attorney-michael-monteforte-jr/" target="_blank" rel="noopener">Michael Monteforte Jr.</a>
+              is the founder of Monteforte Law and a trusted authority in estate planning and asset protection.
+            </p>
+            <p style="margin-bottom:12px; font-size:0.97rem;">Highlights include:</p>
+            <ul class="checklist">
+              <li><span class="ck">✓</span><span>Author of three estate planning books</span></li>
+              <li><span class="ck">✓</span><span>Creator of the 4-Step Asset Protection Plan™</span></li>
+              <li><span class="ck">✓</span><span>The only attorney in Massachusetts offering the 20/20 Hindsight Trust™</span></li>
+              <li><span class="ck">✓</span><span>Known for turning complex legal issues into clear, practical solutions</span></li>
+            </ul>
+            <p style="margin-top:16px; font-size:0.97rem;">Michael's work is focused on helping clients protect their families, preserve their wealth, and avoid unnecessary legal battles through thoughtful, proactive planning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TESTIMONIAL ── -->
+  <div class="testimonial">
+    <div class="container">
+      <blockquote>
+        "Mike really has a way of communicating effectively, genuinely while creating an engaging environment that brings people in."
+        <cite>– Lisa V.</cite>
+      </blockquote>
+    </div>
+  </div>
 
   <!-- ── FOOTER ── -->
   <footer>
@@ -558,75 +620,56 @@
     </div>
   </footer>
 
+  <!-- ── SCRIPTS ── -->
   <script>
-    // ── Fallback webinar date ──
-    const FALLBACK = {
-      date: 'Tuesday, March 25, 2026',
-      time: '6:00 PM ET',
-      // Eastern Daylight Time (UTC-4) for March 25
-      timestamp: new Date('2026-03-25T22:00:00Z').getTime()
-    };
+    const FALLBACK_DATE = 'Tuesday, March 25, 2026';
+    const FALLBACK_TIME = '6:00 PM ET';
+    const FALLBACK_TS   = new Date('2026-03-25T22:00:00Z').getTime(); // 6 PM EDT
 
-    // Parse a date string + time string into a UTC timestamp
-    function parseTimestamp(dateStr, timeStr) {
+    function parseTS(dateStr, timeStr) {
       try {
-        const clean = dateStr.replace(/^\w+,\s+/, '').trim(); // strip "Tuesday, "
+        const clean = dateStr.replace(/^\w+,\s+/, '').trim();
         const m = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
         if (!m) return null;
-
         let h = parseInt(m[1]);
         const min = parseInt(m[2]);
         const ampm = m[3].toUpperCase();
         if (ampm === 'PM' && h !== 12) h += 12;
         if (ampm === 'AM' && h === 12) h = 0;
-
         const d = new Date(clean);
         if (isNaN(d.getTime())) return null;
-
-        // ET offset: EDT (UTC-4) Mar–Nov, EST (UTC-5) otherwise
-        const mo = d.getMonth();
-        const offset = (mo >= 2 && mo <= 10) ? 4 : 5;
+        const offset = (d.getMonth() >= 2 && d.getMonth() <= 10) ? 4 : 5;
         d.setUTCHours(h + offset, min, 0, 0);
         return d.getTime();
-      } catch (e) {
-        return null;
-      }
+      } catch (e) { return null; }
     }
 
-    // Tick the countdown
-    function tick(target) {
-      const diff = target - Date.now();
+    function tick(ts) {
+      const diff = ts - Date.now();
       if (diff <= 0) {
         document.getElementById('countdown').innerHTML =
           '<p class="webinar-live">&#128308; The webinar is live now!</p>';
         return;
       }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('days').textContent    = String(d).padStart(2, '0');
-      document.getElementById('hours').textContent   = String(h).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(m).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+      const days    = Math.floor(diff / 86400000);
+      const hours   = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').textContent    = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent   = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
     }
 
-    function startCountdown(ts) {
-      tick(ts);
-      setInterval(() => tick(ts), 1000);
-    }
-
-    // Fetch date from Netlify function, fall back to hardcoded values
     async function init() {
-      let ts   = FALLBACK.timestamp;
-      let label = FALLBACK.date + ' at ' + FALLBACK.time;
-
+      let ts    = FALLBACK_TS;
+      let label = FALLBACK_DATE + ' at ' + FALLBACK_TIME;
       try {
         const res = await fetch('/.netlify/functions/get-webinar-date');
         if (res.ok) {
           const data = await res.json();
           if (data.date && data.time) {
-            const parsed = parseTimestamp(data.date, data.time);
+            const parsed = parseTS(data.date, data.time);
             if (parsed && parsed > Date.now()) {
               ts    = parsed;
               label = data.date + ' at ' + data.time;
@@ -636,12 +679,11 @@
       } catch (_) { /* use fallback */ }
 
       document.getElementById('webinar-date-text').textContent = label;
-      startCountdown(ts);
+      tick(ts);
+      setInterval(() => tick(ts), 1000);
     }
 
-    // Set copyright year dynamically
     document.getElementById('copy-year').textContent = new Date().getFullYear();
-
     init();
   </script>
 
