@@ -22,9 +22,9 @@
     a:hover { text-decoration: underline; }
 
     .container {
-      max-width: 1100px;
+      max-width: 1260px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
     /* ── HEADER ── */
@@ -109,21 +109,21 @@
 
     /* Left column */
     .hero-title {
-      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
       font-weight: 900;
       color: #013962;
       margin-bottom: 14px;
       line-height: 1.3;
     }
     .hero-sub {
-      font-size: 1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: #013962;
       margin-bottom: 6px;
       line-height: 1.55;
     }
     .hero-tag {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: #013962;
       margin-bottom: 22px;
     }
@@ -134,7 +134,7 @@
       padding: 11px 0;
       align-items: flex-start;
       border-bottom: 1px solid #e4eef8;
-      font-size: 0.97rem;
+      font-size: 1.05rem;
       color: #013962;
     }
     .hero-list li:last-child { border-bottom: none; }
@@ -194,7 +194,7 @@
       justify-content: center;
     }
     .card-label {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #013962;
       margin-bottom: 18px;
@@ -207,7 +207,7 @@
       gap: 12px;
       padding: 9px 0;
       align-items: flex-start;
-      font-size: 0.97rem;
+      font-size: 1.05rem;
       color: #013962;
       border-bottom: 1px solid rgba(1,57,98,0.1);
     }
@@ -228,7 +228,7 @@
       .qual-grid { grid-template-columns: 1fr; gap: 30px; }
     }
     .qual-label {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #013962;
       margin-bottom: 18px;
@@ -239,7 +239,7 @@
       gap: 12px;
       padding: 11px 0;
       align-items: flex-start;
-      font-size: 0.97rem;
+      font-size: 1.05rem;
       color: #013962;
       border-bottom: 1px solid #e4eef8;
     }
@@ -308,129 +308,95 @@
     }
 
     /* ── LAWMATICS FORM STYLING ──
-       Overrides so the embedded form matches the dark navy design in the screenshot:
-       underline-only fields, white text, two-column field grid, styled submit.
+       Force white text on dark navy, 2-column field layout to match original.
     */
-    .form-box h2 {
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 22px;
-      line-height: 1.2;
-    }
 
-    /* Target Lawmatics form wrapper */
-    .form-box form,
-    .form-box [class*="lm-"],
-    .form-box [id*="lm-"] {
-      color: #fff;
-    }
-
-    /* Field labels */
-    .form-box label,
-    .form-box [class*="label"] {
-      color: rgba(255,255,255,0.75) !important;
-      font-size: 0.85rem !important;
-      font-weight: 400 !important;
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    /* All text/email/tel/phone inputs */
-    .form-box input[type="text"],
-    .form-box input[type="email"],
-    .form-box input[type="tel"],
-    .form-box input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+    /* Force ALL backgrounds inside form-box to transparent so dark navy shows through */
+    .form-box * {
       background: transparent !important;
-      border: none !important;
-      border-bottom: 1px solid rgba(255,255,255,0.45) !important;
-      border-radius: 0 !important;
       color: #fff !important;
-      padding: 8px 0 !important;
-      width: 100% !important;
-      font-size: 0.95rem !important;
-      font-family: 'Lato', sans-serif !important;
-      outline: none !important;
       box-shadow: none !important;
     }
-    .form-box input::placeholder { color: rgba(255,255,255,0.5) !important; }
-    .form-box input:focus {
-      border-bottom-color: rgba(255,255,255,0.9) !important;
+
+    /* Inputs: underline only */
+    .form-box input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+    .form-box textarea,
+    .form-box select {
+      border: none !important;
+      border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+      border-radius: 0 !important;
+      padding: 8px 0 !important;
+      width: 100% !important;
+      font-size: 1rem !important;
+      font-family: 'Lato', sans-serif !important;
+      outline: none !important;
+    }
+    .form-box input::placeholder,
+    .form-box textarea::placeholder { color: rgba(255,255,255,0.55) !important; }
+    .form-box input:focus,
+    .form-box textarea:focus {
+      border-bottom-color: #fff !important;
     }
 
-    /* Submit button */
+    /* Submit button — underlined, right-aligned */
     .form-box input[type="submit"],
-    .form-box button[type="submit"],
-    .form-box [class*="submit"] {
-      background: transparent !important;
+    .form-box button[type="submit"] {
       border: none !important;
-      color: #fff !important;
-      font-size: 0.95rem !important;
+      font-size: 1rem !important;
       font-weight: 700 !important;
       text-decoration: underline !important;
       cursor: pointer !important;
-      padding: 8px 0 !important;
-      float: right;
-      font-family: 'Lato', sans-serif !important;
+      padding: 10px 0 !important;
+      display: block;
+      margin-left: auto;
       letter-spacing: 0.5px;
+      font-family: 'Lato', sans-serif !important;
     }
 
-    /* Consent / legal text */
+    /* Labels */
+    .form-box label {
+      font-size: 0.88rem !important;
+      font-weight: 400 !important;
+      opacity: 0.8;
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    /* Consent / small print */
     .form-box p,
-    .form-box small,
-    .form-box [class*="consent"],
-    .form-box [class*="legal"],
-    .form-box [class*="terms"] {
-      color: rgba(255,255,255,0.6) !important;
+    .form-box small {
       font-size: 0.78rem !important;
-      line-height: 1.5;
-    }
-    .form-box a { color: rgba(255,255,255,0.75) !important; }
-
-    /* Field row spacing */
-    .form-box [class*="field"],
-    .form-box [class*="group"],
-    .form-box [class*="row"] {
-      margin-bottom: 16px !important;
+      line-height: 1.5 !important;
+      opacity: 0.7;
     }
 
-    /* Select dropdowns */
-    .form-box select {
-      background: transparent !important;
-      border: none !important;
-      border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+    /* Select option text needs dark color so it's readable in the dropdown */
+    .form-box select option {
+      background: #013962 !important;
       color: #fff !important;
-      padding: 8px 0 !important;
-      width: 100% !important;
-      font-size: 0.95rem !important;
-      outline: none !important;
     }
-    .form-box select option { color: #013962 !important; background: #fff !important; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #013962;
-      padding: 40px 0 20px;
+    /* 2-column field grid — pairs First/Last and Phone/Email side by side */
+    .form-box form,
+    .form-box [class*="form"],
+    .form-box [id*="form"] {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0 20px !important;
     }
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      text-align: center;
+    /* Items that should span both columns */
+    .form-box form > p,
+    .form-box form > small,
+    .form-box form > div:last-child,
+    .form-box [class*="form"] > p,
+    .form-box [class*="form"] > small,
+    .form-box [class*="consent"],
+    .form-box [class*="submit-wrap"],
+    .form-box input[type="submit"],
+    .form-box button[type="submit"] {
+      grid-column: 1 / -1 !important;
     }
-    .footer-logo { height: 52px; filter: brightness(0) invert(1); }
-    .footer-info p { color: #a8ccde; font-size: 0.88rem; margin: 3px 0; }
-    .footer-info a { color: #fff; font-weight: 700; }
-    .footer-copy {
-      color: rgba(255,255,255,0.4);
-      font-size: 0.78rem;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 18px;
-      width: 100%;
-      text-align: center;
-    }
-    .footer-copy a { color: rgba(255,255,255,0.6); }
+
   </style>
 </head>
 <body>
@@ -599,26 +565,6 @@
     </div>
   </div>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="container footer-inner">
-      <img
-        src="https://www.montefortelaw.com/wp-content/uploads/2025/11/Monteforte-Law-logo.webp"
-        alt="Monteforte Law"
-        class="footer-logo"
-      />
-      <div class="footer-info">
-        <p>300 TradeCenter, Suite 6750, Woburn, MA 01801</p>
-        <p><a href="tel:9786577437">978-657-7437</a></p>
-        <p>Monday – Thursday: 8:30 am – 5:00 pm &nbsp;|&nbsp; Friday: 8:30 am – 4:00 pm</p>
-      </div>
-      <p class="footer-copy">
-        &copy; <span id="copy-year">2026</span> Monteforte Law. All rights reserved.
-        &nbsp;|&nbsp;
-        <a href="https://www.montefortelaw.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
-      </p>
-    </div>
-  </footer>
 
   <!-- ── SCRIPTS ── -->
   <script>
@@ -683,7 +629,6 @@
       setInterval(() => tick(ts), 1000);
     }
 
-    document.getElementById('copy-year').textContent = new Date().getFullYear();
     init();
   </script>
 
