@@ -343,7 +343,7 @@
   <div class="announcement">
     <div class="container">
       <p class="announcement-text">
-        Join us for our next webinar on <strong id="webinar-date-text">Tuesday, March 25, 2026 at 6:00 PM ET</strong>!
+        Join us for our next webinar on <strong id="webinar-date-text">our next scheduled date</strong>!
       </p>
       <div class="countdown-row" id="countdown">
         <div class="c-box"><span class="num" id="days">00</span><span class="lbl">Days</span></div>
@@ -495,10 +495,6 @@
 
   <!-- ── SCRIPTS ── -->
   <script>
-    const FALLBACK_DATE = 'Tuesday, March 25, 2026';
-    const FALLBACK_TIME = '6:00 PM ET';
-    const FALLBACK_TS   = new Date('2026-03-25T22:00:00Z').getTime(); // 6 PM EDT
-
     function parseTS(dateStr, timeStr) {
       try {
         const clean = dateStr.replace(/^\w+,\s+/, '').trim();
@@ -515,6 +511,14 @@
         d.setUTCHours(h + offset, min, 0, 0);
         return d.getTime();
       } catch (e) { return null; }
+    }
+
+    // Shown when we have no confirmed upcoming date (fetch failed or only
+    // past dates on the schedule) — never a stale "live now" or past date.
+    function showComingSoon() {
+      document.getElementById('webinar-date-text').textContent = 'our next scheduled date';
+      document.getElementById('countdown').innerHTML =
+        '<p class="webinar-live">New webinar dates announced soon &mdash; register below!</p>';
     }
 
     function tick(ts) {
@@ -535,21 +539,27 @@
     }
 
     async function init() {
-      let ts    = FALLBACK_TS;
-      let label = FALLBACK_DATE + ' at ' + FALLBACK_TIME;
+      let ts    = null;
+      let label = null;
       try {
         const res = await fetch('/.netlify/functions/get-webinar-date');
         if (res.ok) {
           const data = await res.json();
           if (data.date && data.time) {
             const parsed = parseTS(data.date, data.time);
+            // Only trust a date that is actually in the future.
             if (parsed && parsed > Date.now()) {
               ts    = parsed;
               label = data.date + ' at ' + data.time;
             }
           }
         }
-      } catch (_) { /* use fallback */ }
+      } catch (_) { /* fall through to coming-soon */ }
+
+      if (ts === null) {
+        showComingSoon();
+        return;
+      }
 
       document.getElementById('webinar-date-text').textContent = label;
       tick(ts);
