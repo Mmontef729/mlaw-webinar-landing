@@ -107,6 +107,21 @@
       font-weight: 700;
       padding: 10px 0;
     }
+    /* Keep the countdown on a single line on small phones */
+    @media (max-width: 560px) {
+      .countdown-row {
+        flex-wrap: nowrap;
+        gap: 5px;
+      }
+      .c-box {
+        min-width: 0;
+        flex: 1 1 0;
+        padding: 8px 4px;
+      }
+      .c-box .num { font-size: clamp(1.15rem, 6vw, 1.6rem); }
+      .c-box .lbl { font-size: 0.55rem; letter-spacing: 0.5px; }
+      .c-sep { font-size: 1.1rem; padding-bottom: 18px; }
+    }
 
     /* ── HERO ── */
     .hero {
